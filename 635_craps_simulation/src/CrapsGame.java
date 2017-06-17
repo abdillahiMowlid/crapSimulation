@@ -93,10 +93,7 @@ public class CrapsGame
 			
 			if (value==7)
 			{
-				// loss: record losses and return false
-				println("You lose throwing a 7.");
-				losses[steps]++;
-				return false;
+				return lossForPlayer(losses, steps);
 			}
 			else if (value==point)
 			{
@@ -108,6 +105,14 @@ public class CrapsGame
 			}
 		}
 
+		return false;
+	}
+
+	private boolean lossForPlayer(int[] losses, int steps)
+	{
+		// loss: record losses and return false
+		println("You lose throwing a 7.");
+		losses[steps]++;
 		return false;
 	}
 
