@@ -46,7 +46,7 @@ public class TestCraps
 	 * exactly k rolls: <code>winsteps[k]==w </code>, out of
 	 * <code>numPlays</code> total plays.
 	 */
-	private int[] winSteps = new int[100];
+	private int[] winForNumberOfSteps = new int[100];
 
 	/**
 	 * int array field <code>lossSteps</code> racks number of losses l after
@@ -84,7 +84,7 @@ public class TestCraps
 		numWins = 0;
 		for (int i = 0; i < numPlays; i++)
 		{
-			if (game.playOneGame(winSteps, lossSteps))
+			if (game.playOneGame(winForNumberOfSteps, lossSteps))
 			{
 				numWins++;
 			}
@@ -103,10 +103,10 @@ public class TestCraps
 	public void reportStats()
 	{
 		StdOut.println("\nNumber of (wins,losses) for games of given length follow:\n");
-		for (int i = 1; i < winSteps.length; i++)
+		for (int numberOfSteps = 1; numberOfSteps < winForNumberOfSteps.length; numberOfSteps++)
 		{
-			StdOut.println("(wins,losses) ending at " + i + " roll" + ((i > 1) ? "s" : "") + ": (" + winSteps[i] + ","
-					+ lossSteps[i] + ")");
+			StdOut.println("(wins,losses) ending at " + numberOfSteps + " roll" + ((numberOfSteps > 1) ? "s" : "") + ": (" + winForNumberOfSteps[numberOfSteps] + ","
+					+ lossSteps[numberOfSteps] + ")");
 		}
 
 		StdOut.println("\nPlayed " + numPlays + " games total.");

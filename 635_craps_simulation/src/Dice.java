@@ -68,14 +68,14 @@ public class Dice
 
 	// static methods can go anywhere - but at end is standard
 
-	public static final int NUM_TRIALS = 360;
+	public static final int NUM_OF_TRIALS = 360;
 
 	public static void main(String[] args)
 	{
 		Dice dice1 = new Dice();
 		int snakeEyesCount = 0;
 
-		for (int i = 0; i < NUM_TRIALS; i++)
+		for (int i = 0; i < NUM_OF_TRIALS; i++)
 		{
 			dice1.roll();
 			StdOut.println(dice1);
@@ -85,6 +85,6 @@ public class Dice
 		}
 
 		StdOut.println("Actual count: " + snakeEyesCount);
-		StdOut.println("Expected count: " + (NUM_TRIALS / 36.0));
+		StdOut.println("Expected count: " + (NUM_OF_TRIALS / 36.0));
 	}
 }
